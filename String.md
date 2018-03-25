@@ -40,7 +40,7 @@ class Solution(object):
         :rtype: str
         """
         sList = list(s)
-        sList = sList.reverse()
+        sList.reverse()
         sReverse = "".join(sList)
         return sReverse
 ```
