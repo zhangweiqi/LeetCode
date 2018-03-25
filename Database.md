@@ -29,4 +29,27 @@ WHERE population>25000000 OR area>3000000
 
 
 ----------
+## 192.Duplicate Emails
+
+ - url:
+ - analysis:
+ - solution:
+ 
+ ```MySQL
+ SELECT Email
+ FROM Person
+ GROUP BY Email
+ HAVING count(*) > 1
+
+```
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
   [1]: https://leetcode.com/problems/big-countries/description/
