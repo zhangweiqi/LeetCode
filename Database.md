@@ -126,11 +126,13 @@ AND E.Salary = (SELECT MAX(Salary)
 ## 176.Second Highest Salary
 
  - url:
- - analysis:
+ - analysis:先进行WHERE语句，再进行SELECT语句
  - solution:
  
  ```MySQL
-
+SELECT max(Salary) AS SecondHighestSalary
+FROM Employee
+WHERE Salary < (SELECT max())
 ``` 
  
  
@@ -140,14 +142,24 @@ AND E.Salary = (SELECT MAX(Salary)
  - url:
  - analysis:
  - solution:
+ ```MySQL
+ SELECT DISTINCT l1.Num from l1, Logs l2, Logs  l3
+ WHERE l1.Id=l2.Id-1 and l2.Id=l3.Id-1
+ AND l1.Num=l2.Num 
+ AND l2.Num=l3.Num
+ ```
 -------------     
 ## 196.Delete Duplicate Emails
 
  - url:
  - analysis:
  - solution:
+```MySQL
+DELETE P1
+FROM Person AS P1, Person AS P2
+WHERE P1.Email=P2.Email AND P1.Id>P2.Id
+``` 
 -------------     
-## 
  
  
  
