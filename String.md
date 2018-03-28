@@ -87,9 +87,56 @@ class Solution(object):
 
 ------------
 ## 791.Custom Sort String
+
  - url:
- - analysis: 
+ - analysis: 注意T中可以有重复的字母
  - solution:
+ 
+ ```python
+class Solution(object):
+    def customSortString(self, S, T):
+        """
+        :type S: str
+        :type T: str
+        :rtype: str
+        """
+        T = list(T)
+        for s in S:
+            for i in range(T.count(s)):
+                T.remove(s)
+                T.append(s)
+        res = ""        
+        for t in T:        
+           res += str(t) 
+        return res
+```
+
+----------------
+## 557.Reverse Words in a String III
+
+ - url:
+ - analysis:
+ - solution:
+ 
+```python
+class Solution(object):
+    def reverseWords(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        s_list = s.split(" ")
+        s_reverse = [i[::-1] for i in s_list]
+        res = " ".join(s_reverse)
+        return res
+```
+-------------
+## 521.Longest Uncommon Subsequence I
+
+ - url:
+ - analysis:
+ - solution:
+ 
  ```python
 
 ```
