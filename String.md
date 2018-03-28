@@ -134,9 +134,136 @@ class Solution(object):
 ## 521.Longest Uncommon Subsequence I
 
  - url:
+ - analysis: 关键要理解题意
+ - solution:
+ 
+ ```python
+class Solution(object):
+    def findLUSlength(self, a, b):
+        """
+        :type a: str
+        :type b: str
+        :rtype: int
+        """
+        return -1 if a == b else max(len(a), len(b))
+```
+-------------
+## 553.Optimal Division
+
+ - url:
+ - analysis: 仔细分析问题，弄清数学方法后，分情况用代码搞定
+ - solution:
+ 
+ ```python
+class Solution(object):
+    def optimalDivision(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: str
+        """
+        if len(nums) == 1:
+            return str(nums[0])
+        if len(nums) == 2:
+            return "/".join([str(num) for num in nums])
+        else:
+            return str(nums[0]) + '/(' + "/".join([str(num) for num in nums[1:]]) + ')'
+```
+--------------
+## 647.Palindromic Substrings
+
+ - url:
+ - analysis:
+ - solution:
+ 
+```python
+class Solution(object):
+    def countSubstrings(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        length = len(s)
+        res = len(s)
+        for i in range(2, length+1):
+            for j in range(length-i+1):
+                if s[j:j+i] == s[j:j+i][::-1]:
+                    res += 1
+        return res       
+```
+--------------
+## 609.Find Duplicate File in System
+ - url:
  - analysis:
  - solution:
  
  ```python
 
+```
+-------------
+## 520.Detect Capital
+ 
+ - url:
+ - analysis:
+ - solution:
+
+```python
+class Solution(object):
+    def detectCapitalUse(self, word):
+        """
+        :type word: str
+        :rtype: bool
+        """
+        if word.islower():
+            return True
+        elif word.istitle():
+            return True
+        elif word.isupper():
+            return True
+        else:
+            return False
+        
+``` 
+
+------------
+## 788.Rotated Digits
+ - url:https://leetcode.com/problems/rotated-digits/description/
+ - analysis: 理清思路再写
+ - solution:
+ 
+ ```python
+class Solution(object):
+    def rotatedDigits(self, N):
+        """
+        :type N: int
+        :rtype: int
+        """
+        res = 0
+        for i in range(1, N+1):
+            i_str = str(i)
+            i_str_reverse = ""
+            if '3' in i_str or '4' in i_str or '7' in i_str:
+                continue
+            for j in i_str:
+                if j == '2':
+                    i_str_reverse += '5'
+                elif j == '5':
+                    i_str_reverse += '2'
+                elif j == '6':
+                    i_str_reverse += '9'
+                elif j == '9':
+                    i_str_reverse += '6'
+                else:
+                    i_str_reverse += j    
+            if i_str_reverse != i_str:
+                res += 1        
+        return res
+```
+-------------
+## 696.Count Binary Substrings
+  - url:https://leetcode.com/problems/count-binary-substrings/description/
+  - analysis:
+  - solution:
+  
+  ```python
+    
 ```
