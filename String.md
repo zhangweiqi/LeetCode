@@ -261,9 +261,28 @@ class Solution(object):
 -------------
 ## 696.Count Binary Substrings
   - url:https://leetcode.com/problems/count-binary-substrings/description/
-  - analysis:
+  - analysis: 先将字符串格式化为另一种方便处理的格式，然后再处理
+              注意使用了map zip
   - solution:
   
-  ```python
-    
+```python
+class Solution(object):
+    def countBinarySubstrings(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        s = map(len, s.replace('01', '0 1').replace('10', '1 0').split())
+        return sum(min(a, b) for a, b in zip(s, s[1:]))
+
 ```
+------------
+## 606.Construct String from Binary Tree
+ - url:https://leetcode.com/problems/construct-string-from-binary-tree/description/
+ - analysis:
+ -solution:
+
+```python
+
+```
+
