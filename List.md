@@ -1,31 +1,3 @@
-## 338.Counting Bits
-
- - url:
- - analysis: 用现成轮子就是开心
- - solution:
- 
- ```python
-class Solution(object):
-    def countBits(self, num):
-        """
-        :type num: int
-        :rtype: List[int]
-        """
-        numlist = range(num+1)
-        returnlist = []
-        for i in numlist:
-            count = 0
-            i = str(bin(i))
-            returnlist.append(i.count('1'))
-        return returnlist
-```
-
-
-
-----------
-
-
-
 ## 136.Single Number
  
  - url:
@@ -72,29 +44,7 @@ class Solution(object):
                 double.add(i)
         return list(unique-double)
 ```
-## 283.Move Zeroes
-
- - url:
- - analysis: 1.遍历，然后分为两个队列相加  80ms  2.遍历，然后移出0并append 0  299ms
- - soulution:
- ```python
-class Solution(object):
-    def moveZeroes_1(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: None
-        """
-        # 为何要加[:]?
-        nums[:] = [i for i in nums if i] + [i for i in nums if not i]
-        
-    def moveZeroes_2(self, nums):
-        # nums在for循环定义中确定，在循环中改变该变量不影响循环
-        for num in nums:
-            if num == 0:
-                nums.remove(0)
-                nums.append(0)
-```
-
+-------------
 ## 134.Intersection of Two Arrays
 
  - url:
