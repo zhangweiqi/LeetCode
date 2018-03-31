@@ -36,3 +36,5 @@ class Soulution(object):
             num = result
         return num
 ```
+
+------------

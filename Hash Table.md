@@ -19,3 +19,12 @@ class Solution(object):
  ```
 
 ----------
+## 535. Encode and Decode TinyURL
+
+ - url:https://leetcode.com/problems/encode-and-decode-tinyurl/description/
+ - analysis:
+ - solution:
+
+```python
+
+```
