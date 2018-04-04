@@ -259,7 +259,7 @@ class Solution(object):
 ## 606.Construct String from Binary Tree
  - url:https://leetcode.com/problems/construct-string-from-binary-tree/description/
  - analysis:
- -solution:
+ - solution:
 
 ```python
 
