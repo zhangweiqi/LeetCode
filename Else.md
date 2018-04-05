@@ -5,7 +5,22 @@
  - solution:
 
 ```python
-
+class Solution(object):
+    def maxIncreaseKeepingSkyline(self, grid):
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
+        res = 0
+        length = len(grid)
+        wide = len(grid[0])
+        
+        for i in xrange(length):
+            for j in xrange(wide):
+                i_max = max(grid[i])
+                j_max = max([grid[item][j] for item in xrange(length)])
+                res += min(i_max, j_max) - grid[i][j]
+        return res        
 ```
 -----------------
 ## 804. Unique Morse Code Words
