@@ -35,7 +35,7 @@ class Solution(object):
 ## 617. Merge Two Binary Trees
 
  - url:https://leetcode.com/problems/merge-two-binary-trees/description/
- - analysis:
+ - analysis: recursion
  - solution:
 
 ```python

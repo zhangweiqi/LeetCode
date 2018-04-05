@@ -176,7 +176,30 @@ class Solution(object):
  - solution:
  
  ```python
-
+class Solution(object):
+    def findDuplicate(self, paths):
+        """
+        :type paths: List[str]
+        :rtype: List[List[str]]
+        """
+        res = {}
+        # 遍历所有输入路径
+        for path in paths:
+            files = path.split(' ')[1:]
+            directory = path.split(' ')[0]
+            # 遍历一个路径下的所有文件
+            for file in files:
+                content = file.split('(')[1][:-1]
+                name = file.split('(')[0]
+                if content in res.keys():
+                    res[content].append(directory+'/'+name)
+                else:
+                    res[content] = [directory+'/'+name]    
+        ret = []
+        for item in res.values():
+            if len(item) > 1:
+                ret.append(item)   
+        return ret
 ```
 -------------
 ## 520.Detect Capital
@@ -258,10 +281,26 @@ class Solution(object):
 ------------
 ## 606.Construct String from Binary Tree
  - url:https://leetcode.com/problems/construct-string-from-binary-tree/description/
- - analysis:
+ - analysis: 1.采用递归    2.注意题意，输入的是表示二叉树的class
  - solution:
 
 ```python
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
 
+class Solution(object):
+    def tree2str(self, t):
+        """
+        :type t: TreeNode
+        :rtype: str
+        """
+        if not t: return ''
+        left = '({})'.format(self.tree2str(t.left)) if (t.left or t.right) else ''
+        right = '({})'.format(self.tree2str(t.right)) if t.right else ''
+        return '{}{}{}'.format(t.val, left, right)
 ```
 
